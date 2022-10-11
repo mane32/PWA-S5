@@ -6,7 +6,11 @@ self.addEventListener('install', event => {
      //Creamos un cache
 
 
-    console,log('SW: Instalando SW!!' );
+    console,log('SW: Instalando SW' );
 
 });
 
+//Cuando el SW toma el control de la app
+self.addEventListener('activate', event => {
+    console.log('SW: activo y listo para controlar app');
+});
