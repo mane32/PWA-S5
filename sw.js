@@ -5,12 +5,17 @@ self.addEventListener('install', event => {
      //Descargar assets
      //Creamos un cache
 
-
     console,log('SW: Instalando SW' );
 
-});
+    const instalacion = new Promise((resolve, reject) => {
 
-//Cuando el SW toma el control de la app
-self.addEventListener('activate', event => {
-    console.log('SW: activo y listo para controlar app');
+
+    setTimeout(() => {
+        console.log('SW: Instalaciones terminadas');
+        self.skipWaiting();
+        resolve();
+    }, 1000);
+});
+    event.waitUntil(instalacion);
+
 });
